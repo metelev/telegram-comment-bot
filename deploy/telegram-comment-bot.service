@@ -1,0 +1,22 @@
+[Unit]
+Description=Telegram comment bot
+Requires=hiddify-paper.service
+After=network-online.target hiddify-paper.service
+
+[Service]
+Type=simple
+User=telegram-comment
+Group=telegram-comment
+WorkingDirectory=/opt/projects/telegram-comment-bot
+EnvironmentFile=/opt/projects/telegram-comment-bot/.env
+ExecStart=/opt/projects/telegram-comment-bot/.venv/bin/python /opt/projects/telegram-comment-bot/bot.py
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/projects/telegram-comment-bot
+
+[Install]
+WantedBy=multi-user.target
