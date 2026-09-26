@@ -3,3 +3,9 @@
 __pycache__/
 *.pyc
 gigachat_key.txt
+data/
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+backup-context-*/
